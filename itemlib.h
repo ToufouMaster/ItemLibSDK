@@ -8,19 +8,15 @@ static ItemManager* g_itemManager = nullptr;
 static SpriteLoader* g_spriteLoader = nullptr;
 static std::once_flag g_initFlag;
 
-static void InitializeObjects() {
-    g_itemManager = new ItemManager();
-    g_spriteLoader = new SpriteLoader();
-}
+typedef ItemManager* (*tGetItemManager)();
+typedef SpriteLoader* (*tGetSpriteLoader)();
+static tGetItemManager GetItemManager = nullptr;
+static tGetSpriteLoader GetSpriteLoader = nullptr;
 
 void InitializeCILib() {
-    std::call_once(g_initFlag, InitializeObjects);
-}
-
-extern "C" __declspec(dllexport) ItemManager* GetItemManager() {
-    return g_itemManager;
-}
-
-extern "C" __declspec(dllexport) SpriteLoader* GetSpriteLoader() {
-    return g_spriteLoader;
+    HMODULE hRoot = GetModuleHandleA("ItemLib.dll");
+    if (hRoot) {
+        GetItemManager = (tGetItemManager)GetProcAddress(hRoot, "internal_GetItemManager");
+        GetSpriteLoader = (tGetSpriteLoader)GetProcAddress(hRoot, "internal_GetSpriteLoader");
+    }
 }
