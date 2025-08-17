@@ -91,12 +91,12 @@ typedef struct ItemData
 	std::wstring itemName;					//Item name
 	CategoryType itemCategory;  //Item Category;
 	int itemID;								//Item ID
-	ModItem* itemBehaviour;
+	ItemBehaviour* itemBehaviour;
 
 	//This is not needed as this struct contain all the needed data;
-	//ModItem* id_modItem; //Item mod, used to implement the ITEM in the mod;
+	//ItemBehaviour* id_modItem; //Item mod, used to implement the ITEM in the mod;
 
-	ItemData(std::wstring name, ModItem* behaviour, CategoryType category, int id)
+	ItemData(std::wstring name, ItemBehaviour* behaviour, CategoryType category, int id)
 	{
 		this->itemName = name;
 		this->itemCategory = category;
@@ -116,7 +116,7 @@ typedef struct ItemData
 		return this;
 	}
 
-	ItemData* SetBehaviour(ModItem* behaviour)
+	ItemData* SetBehaviour(ItemBehaviour* behaviour)
 	{
 		this->itemBehaviour = behaviour;
 		return this;

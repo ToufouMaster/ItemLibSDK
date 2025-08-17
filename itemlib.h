@@ -1,7 +1,12 @@
 #include "SpriteLoader.h"
-#include "ModItem.h"
+#include "ItemBehaviour.h"
 #include "ItemData.h"
 #include "ItemManager.h"
+
+// Behaviours
+#include "Behaviours/ItemBehaviourConsumable.h"
+#include "Behaviours/ItemBehaviourPotion.h"
+
 #include <mutex>
 
 static ItemManager* g_itemManager = nullptr;
