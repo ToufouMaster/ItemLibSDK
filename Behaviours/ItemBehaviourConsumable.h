@@ -17,6 +17,7 @@ public:
 	};
 
 	void OnUse(cube::Creature* creature, cube::ItemStack* stack) override {
+		if (creature->entity_data.stun_time >= 0) return;
 		creature->entity_data.last_special_item.Copy(&stack->item);
 		if (IsDrink()) {
 			creature->entity_data.current_ability = 84;
