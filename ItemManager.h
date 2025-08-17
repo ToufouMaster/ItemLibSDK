@@ -16,7 +16,6 @@ public:
 			//Duplicate items are not allowed;
 			return false;
 		}
-		MessageBoxA(NULL, "Registered Item", (std::string(item->itemName.begin(), item->itemName.end())+std::string(" of id: ")+std::to_string(item->itemID)).c_str(), MB_OK);
 		item_vector.push_back(item);
 		return true;
 	}

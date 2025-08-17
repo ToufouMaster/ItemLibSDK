@@ -21,7 +21,6 @@ class SpriteLoader {
 			sprite_manager->ParseCubToSprite(sprite, path);
 			sprite_manager->sprites.push_back(sprite);
 			loaded_sprites.insert({ model_name, sprite });
-			MessageBoxA(NULL, "Loaded Sprite", (std::string("Sprite Loaded: ")+path).c_str(), MB_OK);
 			return sprite;
 		}
 

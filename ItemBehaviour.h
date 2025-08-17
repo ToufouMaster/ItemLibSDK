@@ -14,6 +14,17 @@ public:
 	// Return if a PLAYER can use the item.
 	virtual bool CanBeUsed() { return false; };
 
+
+	// Return if the item give a buff when drinked.
+	virtual bool CanBuff() { return false; };
+
+	virtual cube::Creature::Buff* GetAppliedBuff() {
+		return nullptr;
+	}
+
+	// Return if the item is eatable (false) or drinkable (true).
+	virtual bool IsDrink() { return false; };
+
 	//Whenever we Spawn this item into the world this function is called
 	virtual void OnSpawn() {};
 

@@ -1,5 +1,5 @@
 
-class ItemBehaviourConsumable : ItemBehaviour {
+class ItemBehaviourConsumable : public ItemBehaviour {
 public:
 
 	bool isDrink = false;
@@ -43,5 +43,5 @@ public:
 	}
 
 	// Return if the item is eatable (false) or drinkable (true).
-	virtual bool IsDrink() { return isDrink; };
+	bool IsDrink() override { return isDrink; };
 };
