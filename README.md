@@ -26,8 +26,8 @@ It contains classes and functions to simplify the item creation process.
     > Register your items for you, it takes an ItemData ptr.
   - ItemData* Get(std::wstring name)
   - ItemData* Get(ItemData::CategoryType category, int id)
-    > Retrieve any item you or an other mod loaded, simply provide the item_name or it's category and id and you'll get the ItemData associated with it.
-    > In the case where no items where found it return a nullptr instead.
+    > Retrieve any item you or any other mod loaded, simply provide the item_name or it's category and id and you'll get the ItemData associated with it.
+    > In the case where no items was found it return a nullptr instead.
 
 - SpriteLoader
   - cube::Sprite* LoadModel(std::wstring mod_id, cube::SpriteManager* sprite_manager, std::wstring model_name, std::string file_path)
