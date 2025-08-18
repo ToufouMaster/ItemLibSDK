@@ -9,7 +9,10 @@ It contains classes and functions to simplify the item creation process.
 
 ## To safely use this library, please load and register all your sprite and items in OnGameTick() instead of Initialize().
 
-(you want to initialize them only once)
+You wan to:
+-  import the cwsdk before inmporting itemlib.h
+-  initialize items and sprite only once
+
 
 ### This library does not have a real documentation, but here are the functions you're gonna need to remember
 - void InitializeCILib()
